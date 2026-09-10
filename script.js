@@ -24,3 +24,15 @@ function getComputerChoice()
         return "scissors";
     }
 }
+
+// Gets the choice from the user
+function getHumanChoice()
+{   
+    // Prompt user to enter their choice
+    let choice = prompt("User please enter your choice here: ");
+
+    // Transform to lowercase for consistency
+    choice = choice.toLowerCase();
+
+    return choice;
+}
