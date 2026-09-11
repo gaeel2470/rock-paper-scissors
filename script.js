@@ -41,14 +41,13 @@ function playRound(humanChoice, computerChoice)
     // Log user and computer choices
     console.log("Your choice: " + humanChoice);
     console.log("Computer choice: " + computerChoice);
-    
+
     // Decide winner of round
 
     // If both choices are the same round is a tie and scores remain the same, log outcome
     if (humanChoice === computerChoice)
     {
-        console.log("The round is a tie!")
-        return;
+        console.log("The round is a tie!");
     }
     
     // Round is not a tie
@@ -90,15 +89,54 @@ function playRound(humanChoice, computerChoice)
         {
             console.log("You lose! " + computerChoice + " beats " + humanChoice);
         }
+
+        // Increment computer score by 1
+        computerScore++;
     }
 }
 
-// Variables to keep track of the scores during the game
+// Plays 5 rounds, keeps track of the scores and logs the outcome of the game
+function playGame()
+{   
+    // Game will have 5 rounds
+    const rounds = 5;
+    for (let i = 0; i < rounds; i++)
+    {
+        // Variables to store user and computer choices
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+
+        // Start round
+        playRound(humanChoice, computerChoice);
+    }
+
+    // Log final scores and winner of game
+    console.log("Your final score is: " + humanScore);
+    console.log("The computer's final score is: " + computerScore);
+
+    // User wins
+    if (humanScore > computerScore)
+    {
+        console.log("Congratulations! You won the game");
+    }
+
+    // Computer wins
+    else if (computerScore > humanScore)
+    {
+        console.log("We're sorry, you lost the game this time");
+    }
+
+    // Tie
+    else
+    {
+        console.log("No winner! Game is a tie");
+    }
+
+}
+
+// Variables to keep track of the scores
 let humanScore = 0;
 let computerScore = 0;
 
-// Variables to store the choices
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-
-playRound(humanChoice, computerChoice);
+// Play the game
+playGame();
