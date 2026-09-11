@@ -1,33 +1,39 @@
-// Gets the choice for the computer randomly
+// Gets computer choice randomly
 function getComputerChoice()
 {
     // Map the 3 choices to the integers 0, 1 and 2
     // Rock will be 0, Paper 1, and Scissors 2
 
     // Get a random integer between 0 and 2 inclusive
-    const max = 3;
-    let choice = Math.floor(Math.random() * max);
+    let choice = Math.floor(Math.random() * 3);
 
     // Return the corresponding choice
+
     if (choice === 0)
     {
         return "Rock";
     }
+
     else if (choice === 1)
     {
         return "Paper";
     }
-    else // choice equals 2
+
+    // choice equals 2
+    else
     {
         return "Scissors";
     }
 }
 
-// Gets the choice from the user
+// Gets user choice
 function getHumanChoice()
 {   
     // Prompt user to enter their choice
     let choice = prompt("User please enter your choice here: ");
+
+
+    // For style, capitalize only the first letter 
 
     // Transform to lowercase
     choice = choice.toLowerCase();
@@ -36,7 +42,7 @@ function getHumanChoice()
     return choice[0].toUpperCase() + choice.slice(1);
 }
 
-// Gets the winner of the round and updates scores accordingly
+// Gets winner of round and updates scores accordingly
 function playRound(humanChoice, computerChoice)
 {   
     // Log user and computer choices
@@ -45,9 +51,10 @@ function playRound(humanChoice, computerChoice)
 
     // Decide winner of round
 
-    // If both choices are the same round is a tie and scores remain the same, log outcome
+    // If both choices are the same round is a tie and scores remain the same
     if (humanChoice === computerChoice)
     {
+        // Log outcome
         console.log("The round is a tie!");
     }
     
@@ -60,7 +67,7 @@ function playRound(humanChoice, computerChoice)
     {   
         // Log outcome 
 
-        // Slight change if user choice is Scissors to follow English grammar
+        // Slight change in log if user choice is Scissors to follow English grammar
         if (humanChoice === "Scissors")
         {
             console.log("You win! Scissors beat " + computerChoice)
@@ -80,7 +87,7 @@ function playRound(humanChoice, computerChoice)
     {   
         // Log outcome
 
-        // Slight change if computer choice is Scissors to follow English grammar
+        // Slight change in log if computer choice is Scissors to follow English grammar
         if (computerChoice === "Scissors")
         {
             console.log("You lose! Scissors beat " + humanChoice);
@@ -114,24 +121,24 @@ function getWinner()
     // Computer wins
     else if (computerScore > humanScore)
     {
-        console.log("We're sorry, you lost the game this time");
+        console.log("You lost the game this time :(");
     }
 
     // Tie
     else
     {
-        console.log("No winner! Game is a tie");
+        console.log("No winner! The game is a tie");
     }
 }
 
-// Plays 5 rounds, keeps track of the scores and logs the outcome of the game
+// Starts the game
 function playGame()
 {   
     // Game will have 5 rounds
     const rounds = 5;
     for (let i = 0; i < rounds; i++)
     {
-        // Variables to store user and computer choices
+        // Variables to store user and computer choices for current round
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
 
@@ -139,7 +146,7 @@ function playGame()
         playRound(humanChoice, computerChoice);
     }
 
-    // Get winner of the game
+    // Compare scores and get winner of the game
     getWinner();
 }
 
@@ -147,5 +154,5 @@ function playGame()
 let humanScore = 0;
 let computerScore = 0;
 
-// Play the game
+// Start the game
 playGame();
