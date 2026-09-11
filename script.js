@@ -11,15 +11,15 @@ function getComputerChoice()
     // Return the corresponding choice
     if (choice === 0)
     {
-        return "rock";
+        return "Rock";
     }
     else if (choice === 1)
     {
-        return "paper";
+        return "Paper";
     }
     else // choice equals 2
     {
-        return "scissors";
+        return "Scissors";
     }
 }
 
@@ -29,10 +29,11 @@ function getHumanChoice()
     // Prompt user to enter their choice
     let choice = prompt("User please enter your choice here: ");
 
-    // Transform to lowercase for consistency
+    // Transform to lowercase
     choice = choice.toLowerCase();
-
-    return choice;
+    
+    // Capitalize first letter
+    return choice[0].toUpperCase() + choice.slice(1);
 }
 
 // Gets the winner of the round
