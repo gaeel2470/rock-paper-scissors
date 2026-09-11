@@ -146,7 +146,7 @@ function playGame()
         playRound(humanChoice, computerChoice);
     }
 
-    // Compare scores and get winner of the game
+    // Log final scores and winner of the game
     getWinner();
 }
 
