@@ -36,7 +36,7 @@ function getHumanChoice()
     return choice[0].toUpperCase() + choice.slice(1);
 }
 
-// Gets the winner of the round
+// Gets the winner of the round and updates scores accordingly
 function playRound(humanChoice, computerChoice)
 {   
     // Log user and computer choices
@@ -54,14 +54,14 @@ function playRound(humanChoice, computerChoice)
     // Round is not a tie
 
     // Outcomes where user wins
-    else if (humanChoice === "rock" && computerChoice === "scissors" ||
-             humanChoice === "paper" && computerChoice === "rock" ||
-             humanChoice === "scissors" && computerChoice === "paper")
+    else if (humanChoice === "Rock" && computerChoice === "Scissors" ||
+             humanChoice === "Paper" && computerChoice === "Rock" ||
+             humanChoice === "Scissors" && computerChoice === "Paper")
     {   
         // Log outcome 
 
-        // Slight change if user choice is Scissors to respect English grammar
-        if (humanChoice === "scissors")
+        // Slight change if user choice is Scissors to follow English grammar
+        if (humanChoice === "Scissors")
         {
             console.log("You win! Scissors beat " + computerChoice)
         }
@@ -75,13 +75,13 @@ function playRound(humanChoice, computerChoice)
         humanScore++;
     }
 
-    // User loses in all remaining outcomes
+    // User loses in all other outcomes
     else
     {   
         // Log outcome
 
-        // Slight change if computer choice is Scissors to respect English grammar
-        if (computerChoice === "scissors")
+        // Slight change if computer choice is Scissors to follow English grammar
+        if (computerChoice === "Scissors")
         {
             console.log("You lose! Scissors beat " + humanChoice);
         }
@@ -96,24 +96,14 @@ function playRound(humanChoice, computerChoice)
     }
 }
 
-// Plays 5 rounds, keeps track of the scores and logs the outcome of the game
-function playGame()
-{   
-    // Game will have 5 rounds
-    const rounds = 5;
-    for (let i = 0; i < rounds; i++)
-    {
-        // Variables to store user and computer choices
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-
-        // Start round
-        playRound(humanChoice, computerChoice);
-    }
-
-    // Log final scores and winner of game
+// Logs final scores and winner of the game
+function getWinner()
+{
+    // Log final scores
     console.log("Your final score is: " + humanScore);
-    console.log("The computer's final score is: " + computerScore);
+    console.log("Computer's final score is: " + computerScore);
+
+    // Log winner
 
     // User wins
     if (humanScore > computerScore)
@@ -132,7 +122,25 @@ function playGame()
     {
         console.log("No winner! Game is a tie");
     }
+}
 
+// Plays 5 rounds, keeps track of the scores and logs the outcome of the game
+function playGame()
+{   
+    // Game will have 5 rounds
+    const rounds = 5;
+    for (let i = 0; i < rounds; i++)
+    {
+        // Variables to store user and computer choices
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+
+        // Start round
+        playRound(humanChoice, computerChoice);
+    }
+
+    // Get winner of the game
+    getWinner();
 }
 
 // Variables to keep track of the scores
