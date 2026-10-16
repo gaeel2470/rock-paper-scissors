@@ -1,3 +1,6 @@
+// Change the pages background color
+document.querySelector("body").style.backgroundColor = "#4b4b4b";
+
 // Gets computer choice randomly
 function getComputerChoice()
 {
