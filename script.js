@@ -7,28 +7,20 @@ const choiceButtons = document.querySelector(".choices");
 
 choiceButtons.addEventListener("click", event => {
 
-    // Get clicked element
-    const target = event.target;
+    // Clicking the div itself could also trigger the event listener
+    // Make sure one of the buttons was clicked
 
-    // Get computer choice
-    const computerChoice = getComputerChoice();
+    const userChoice = event.target.textContent;
 
-    // Call playRound function with corresponding user choice
-    switch (target.class)
-    {
-        case "rock":
-            playRound(target.value, computerChoice);
-            break;
-        
-        case "paper":
-            playRound(target.value, computerChoice);
-            break;
+    if (userChoice === "Rock" || userChoice === "Paper" || userChoice === "Scissors")
+    {   
+        // Get computer choice
+        const computerChoice = getComputerChoice();
 
-        case "scissors":
-            playRound(target.value, computerChoice);
-            break;
+        // Call playRound with corresponding user choice
+        playRound(userChoice, computerChoice);
     }
-})
+});
 
 // Gets computer choice randomly
 function getComputerChoice()
@@ -150,6 +142,3 @@ function getWinner()
 // Variables to keep track of the scores
 let humanScore = 0;
 let computerScore = 0;
-
-// Start the game
-playGame();
