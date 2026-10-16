@@ -1,6 +1,35 @@
 // Change the pages background color
 document.querySelector("body").style.backgroundColor = "#4b4b4b";
 
+// Add event listener to choice buttons
+
+const choiceButtons = document.querySelector(".choices");
+
+choiceButtons.addEventListener("click", event => {
+
+    // Get clicked element
+    const target = event.target;
+
+    // Get computer choice
+    const computerChoice = getComputerChoice();
+
+    // Call playRound function with corresponding user choice
+    switch (target.class)
+    {
+        case "rock":
+            playRound(target.value, computerChoice);
+            break;
+        
+        case "paper":
+            playRound(target.value, computerChoice);
+            break;
+
+        case "scissors":
+            playRound(target.value, computerChoice);
+            break;
+    }
+})
+
 // Gets computer choice randomly
 function getComputerChoice()
 {
