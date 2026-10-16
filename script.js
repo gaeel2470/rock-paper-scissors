@@ -147,25 +147,6 @@ function getWinner()
     }
 }
 
-// Starts the game
-function playGame()
-{   
-    // Game will have 5 rounds
-    const rounds = 5;
-    for (let i = 0; i < rounds; i++)
-    {
-        // Variables to store user and computer choices for current round
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-
-        // Start round
-        playRound(humanChoice, computerChoice);
-    }
-
-    // Log final scores and winner of the game
-    getWinner();
-}
-
 // Variables to keep track of the scores
 let humanScore = 0;
 let computerScore = 0;
