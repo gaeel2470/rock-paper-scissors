@@ -32,8 +32,6 @@ function getComputerChoice()
 // Gets user choice
 function getHumanChoice()
 {   
-    // Prompt user to enter their choice
-    let choice = prompt("User please enter your choice here: ");
 
 
     // For style, capitalize only the first letter 
