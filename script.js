@@ -58,20 +58,6 @@ function getComputerChoice()
     }
 }
 
-// Gets user choice
-function getHumanChoice()
-{   
-
-
-    // For style, capitalize only the first letter 
-
-    // Transform to lowercase
-    choice = choice.toLowerCase();
-    
-    // Capitalize first letter
-    return choice[0].toUpperCase() + choice.slice(1);
-}
-
 // Gets winner of round and updates scores accordingly
 function playRound(humanChoice, computerChoice)
 {   
