@@ -111,34 +111,6 @@ function playRound(humanChoice, computerChoice)
     }
 }
 
-// Logs final scores and winner of the game
-function getWinner()
-{
-    // Log final scores
-    console.log("Your final score is: " + humanScore);
-    console.log("Computer's final score is: " + computerScore);
-
-    // Log winner
-
-    // User wins
-    if (humanScore > computerScore)
-    {
-        console.log("Congratulations! You won the game");
-    }
-
-    // Computer wins
-    else if (computerScore > humanScore)
-    {
-        console.log("You lost the game this time :(");
-    }
-
-    // Tie
-    else
-    {
-        console.log("No winner! The game is a tie");
-    }
-}
-
 // Variables to keep track of the scores
 let humanScore = 0;
 let computerScore = 0;
