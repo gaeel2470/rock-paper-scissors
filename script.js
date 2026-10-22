@@ -1,4 +1,4 @@
-// Change the pages background color
+// Change the page's background color
 document.querySelector("body").style.backgroundColor = "#4b4b4b";
 
 // Add event listener to choice buttons
@@ -29,7 +29,7 @@ function getComputerChoice()
     // Rock will be 0, Paper 1, and Scissors 2
 
     // Get a random integer between 0 and 2 inclusive
-    let choice = Math.floor(Math.random() * 3);
+    const choice = Math.floor(Math.random() * 3);
 
     // Return the corresponding choice
 
