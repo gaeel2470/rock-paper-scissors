@@ -14,10 +14,6 @@ choiceButtons.addEventListener("click", event => {
 
     if (userChoice === "Rock" || userChoice === "Paper" || userChoice === "Scissors")
     {   
-        // Remove instructions
-        const gameInstructions = document.querySelector(".instructions");
-        gameInstructions.textContent = "";
-
         // If someone already won start a new game
         if (humanScore === 5 || computerScore === 5)
         {
@@ -146,7 +142,7 @@ function playRound(humanChoice, computerChoice)
 
         else
         {
-            finalWinner.textContent = "The game has ended. The computer won. Click a button to start a new game!"
+            finalWinner.textContent = "The game has ended. The computer won. Click a button again to start a new game!"
         }
     }
 }
