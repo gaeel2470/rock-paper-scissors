@@ -69,7 +69,7 @@ function playRound(humanChoice, computerChoice)
     userSelection.textContent = "Your choice is: " + humanChoice;
 
     const computerSelection = document.querySelector(".computer-selection");
-    computerSelection.textContent = "Computer's choice is: " + computerChoice;
+    computerSelection.textContent = "The computer's choice is: " + computerChoice;
 
     // Get winner of round and show it on screen
 
@@ -78,7 +78,7 @@ function playRound(humanChoice, computerChoice)
     // If both choices are the same round is a tie and scores remain the same
     if (humanChoice === computerChoice)
     {
-        roundOutcome.textContent = "The round is a tie!";
+        roundOutcome.textContent = "The round is a tie! No point is conceded";
     }
     
     // Round is not a tie
@@ -91,12 +91,12 @@ function playRound(humanChoice, computerChoice)
         // Slight change if user choice is Scissors to follow English grammar
         if (humanChoice === "Scissors")
         {
-            roundOutcome.textContent = "You win! Scissors beat " + computerChoice;
+            roundOutcome.textContent = "You got a point! Scissors beat " + computerChoice;
         }
 
         else
         {
-            roundOutcome.textContent = "You win! " + humanChoice + " beats " + computerChoice;
+            roundOutcome.textContent = "You got a point! " + humanChoice + " beats " + computerChoice;
         }
 
         // Increment user score by 1
@@ -109,12 +109,12 @@ function playRound(humanChoice, computerChoice)
         // Slight change if computer choice is Scissors to follow English grammar
         if (computerChoice === "Scissors")
         {
-            roundOutcome.textContent = "You lose! Scissors beat " + humanChoice;
+            roundOutcome.textContent = "The computer gets the point! Scissors beat " + humanChoice;
         }
         
         else
         {
-            roundOutcome.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
+            roundOutcome.textContent = "The computer gets the point! " + computerChoice + " beats " + humanChoice;
         }
 
         // Increment computer score by 1
@@ -127,7 +127,7 @@ function playRound(humanChoice, computerChoice)
     userCurrentScore.textContent = "Your score is: " + humanScore;
 
     const computerCurrentScore = document.querySelector(".computer-score");
-    computerCurrentScore.textContent = "Computer's score is: " + computerScore;
+    computerCurrentScore.textContent = "The computer's score is: " + computerScore;
 
     // Check if there is a winner
 
@@ -137,12 +137,12 @@ function playRound(humanChoice, computerChoice)
 
         if (humanScore === 5)
         {
-            finalWinner.textContent = "The game has ended. You won! Click a button to start a new game!";
+            finalWinner.textContent = "The game has ended. You won! :) Click a button again to start a new game!";
         }
 
         else
         {
-            finalWinner.textContent = "The game has ended. The computer won. Click a button again to start a new game!"
+            finalWinner.textContent = "The game has ended. The computer won :( Click a button again to start a new game!"
         }
     }
 }
