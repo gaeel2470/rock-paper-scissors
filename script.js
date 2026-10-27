@@ -19,6 +19,9 @@ choiceButtons.addEventListener("click", event => {
 
             const finalWinner = document.querySelector(".winner");
             finalWinner.textContent = "";
+
+            const afterGame = document.querySelector(".post-game");
+            afterGame.textContent = "";
         }
 
         // Get computer choice
@@ -76,6 +79,7 @@ function playRound(humanChoice, computerChoice)
     if (humanChoice === computerChoice)
     {
         roundOutcome.textContent = "The round is a tie! No point is conceded";
+        roundOutcome.style.color = "lightblue";
     }
     
     // Round is not a tie
@@ -98,6 +102,8 @@ function playRound(humanChoice, computerChoice)
 
         // Increment user score by 1
         humanScore++;
+
+        roundOutcome.style.color = "green";
     }
 
     // User loses in all other outcomes
@@ -116,6 +122,8 @@ function playRound(humanChoice, computerChoice)
 
         // Increment computer score by 1
         computerScore++;
+
+        roundOutcome.style.color = "red";
     }
 
     // Show current scores on screen
@@ -134,13 +142,18 @@ function playRound(humanChoice, computerChoice)
 
         if (humanScore === 5)
         {
-            finalWinner.textContent = "The game has ended. You won! :) Click a button again to start a new game!";
+            finalWinner.textContent = "The game has ended. You won! :)";
+            finalWinner.style.color = "green";
         }
 
         else
         {
-            finalWinner.textContent = "The game has ended. The computer won :( Click a button again to start a new game!"
+            finalWinner.textContent = "The game has ended. The computer won :("
+            finalWinner.style.color = "red";
         }
+
+        const afterGame = document.querySelector(".post-game");
+        afterGame.textContent = "Click a button again to start a new game!";
     }
 }
 
