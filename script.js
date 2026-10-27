@@ -1,6 +1,3 @@
-// Change the page's background color
-document.querySelector("body").style.backgroundColor = "#4b4b4b";
-
 // Add event listener to choice buttons
 
 const choiceButtons = document.querySelector(".choices");
